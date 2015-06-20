@@ -26,4 +26,32 @@
 
 {{/if}}
 
+<h2>Answers</h2>
+
+<!-- <ul>
+  {{#each answer in model}}
+    <li>{{#link-to 'questions.question.new-answer'}}{{new-answer.answer}}{{/link-to}}</li>
+  {{/each}}
+</ul> -->
+
+ <!-- <p>
+    {{#link-to 'question.new-answer' this.id class="btn btn-primary"}}Add an Answer{{/link-to}}
+  </p> -->
+
+<div class="new-msg-link">{{#link-to 'question.new-answer'}}Answer this question{{/link-to}}</div>
+
+
 {{outlet}}
+
+
+<!-- <ul class="list-unstyled">
+{{#each new-answer in model}}
+
+<li>{{#link-to 'questions.new-answer' question.id}}{{new-answer.response}}{{/link-to}} by {{new-answer.user}}</li>
+
+{{/each}}
+</ul> -->
+
+<!-- {{outlet}}
+
+<div class="container">{{#link-to 'question.new-answer'}}Answer this Question{{/link-to}}</div> -->
