@@ -9,6 +9,7 @@ export default Ember.Controller.extend({
         body: this.get('body')
       });
       newQuestion.save();
+      this.transitionToRoute('questions');
       this.setProperties({
         name:'',
         description:'',
