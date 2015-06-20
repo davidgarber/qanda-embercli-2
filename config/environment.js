@@ -4,6 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'qanda-embercli-2',
     environment: environment,
+    firebase: 'https://qanda-embercli-2.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
