@@ -8,17 +8,13 @@ export default Ember.ObjectController.extend({
         user: this.get('user'),
         response: this.get('response')
       });
-      var question = this.get('controllers.questions.question.model');
-      newAnswer.save().then(function() {
+      newAnswer.save();
+
+      var question = this.get('controllers.question.model');
         question.get('answers').pushObject(newAnswer);
         question.save();
-      });
-      this.setProperties({
-        name:'',
-        description:'',
-        body:''
-      });
 
+    this.transitionToRoute("question");
     }
   }
 });
