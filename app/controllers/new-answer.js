@@ -3,16 +3,23 @@ import Ember from 'ember';
 export default Ember.ObjectController.extend({
   needs:['question'],
   actions: {
-    saveAnswer: function() {
-      var newAnswer = this.store.createRecord('answer', {
+    save: function() {
+      var answer = this.store.createRecord('answer', {
         user: this.get('user'),
-        response: this.get('response')
+        response: this.get('response'),
+        timestamp: new Date()
       });
-      newAnswer.save();
 
       var question = this.get('controllers.question.model');
-        question.get('answers').pushObject(newAnswer);
+        answer.save().then(function() {
+        question.get('answers').pushObject(answer);
         question.save();
+        });
+
+      this.setProperties({
+        user:'',
+        response:''
+      });
 
     this.transitionToRoute("question");
     }

@@ -30,7 +30,7 @@
 
 <ul>
   {{#each answer in model.answers}}
-    <li>{{'answer.response'}}</li>
+    <li>{{'answer.response'}} at {{'answer.timestamp'}}</li>
   {{/each}}
 </ul>
 
@@ -38,7 +38,7 @@
     {{#link-to 'question.new-answer' this.id class="btn btn-primary"}}Add an Answer{{/link-to}}
   </p> -->
 
-<div class="new-msg-link">{{#link-to 'question.new-answer'}}Answer this question{{/link-to}}</div>
+<div class="new-msg-link">{{#link-to 'new-answer'}}Answer this question{{/link-to}}</div>
 
 
 {{outlet}}

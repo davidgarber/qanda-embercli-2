@@ -9,7 +9,7 @@ Router.map(function() {
   this.route("about");
   this.resource('questions', {path: '/'});
   this.resource('question', {path: 'question/:question_id'}, function(){
-    this.route('new-answer');
+    this.resource('new-answer');
   });
   this.route('new-question');
 });
